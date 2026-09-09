@@ -1,0 +1,7 @@
+{
+  "name": "RBornasalLab",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

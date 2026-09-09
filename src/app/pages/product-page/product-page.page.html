@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/catalog">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      {{ product?.name || 'Product Details' }}
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card *ngIf="product">
+
+    <img
+      [src]="product.image"
+      [alt]="product.name"
+    >
+
+    <ion-card-header>
+      <ion-card-title>
+        {{ product.name }}
+      </ion-card-title>
+
+      <ion-card-subtitle>
+        ₱{{ product.price }}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h2>Description</h2>
+      <p>{{ product.description }}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-text color="danger" *ngIf="!product">
+    <p>Product not found.</p>
+  </ion-text>
+
+</ion-content>
